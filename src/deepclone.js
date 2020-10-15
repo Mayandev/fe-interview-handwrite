@@ -11,4 +11,5 @@ function deepClone(obj) {
   return copy;
 }
 
+// test
 console.log(deepClone({name: 'jack', birth: {year: '1997', month: '10'}})) // {name: 'jack', birth: {…}}

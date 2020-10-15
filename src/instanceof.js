@@ -8,3 +8,4 @@ function myInstanceOf(left, right) {
   }
 }
 
+console.log(myInstanceOf([], Array));  // true

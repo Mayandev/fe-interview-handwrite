@@ -14,3 +14,5 @@ function quicksort(arr) {
   return quicksort(left).concat(pivot, quicksort(right));
 
 }
+
+console.log(quicksort([4,3,5,2,1,6]));   //  [1, 2, 3, 4, 5, 6]

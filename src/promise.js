@@ -30,3 +30,11 @@ const MyPromise = function(fn) {
     reject(error);
   }
 }
+
+// test
+let p = new MyPromise((resolve, reject) => {
+  resolve('hello');
+})
+p.then(res => {
+  console.log(res);  // hello
+})
