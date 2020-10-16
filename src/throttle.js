@@ -1,4 +1,4 @@
-var throttle(fn, wait) {
+function throttle(fn, wait) {
   let  pre = new Date();
   return function() {
     let context = this;

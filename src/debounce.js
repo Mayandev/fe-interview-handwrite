@@ -1,4 +1,4 @@
-funciton debounce(fn, wait) {
+function debounce(fn, wait) {
   let timeout = null;
   return function() {
     let context = this;
