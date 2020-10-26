@@ -1,14 +1,14 @@
-Function.prototype.MyBind = function (context, ...args) {
-  let self = this;
-  return function() {
-    return self.apply(context, args);
-  }
-}
+Function.prototype.bindNew = function (context, ...args) {
+  return (...newArgs) => this.apply(context, [...args, ...newArgs]);
+};
 
 // test
-let a = {name: 'jack'} 
-let test = function() {
-  console.log(this.name); // jack
-}
-let rs = test.MyBind(a);
-rs();
+const test = {
+  name: "fy",
+  showName: function (last: string) {
+    console.log(this.name + " is " + last);
+  },
+};
+test.showName("handsome"); // fy is handsome
+test.showName.bind({ name: "Mr.fy" })("handsome");
+test.showName.bindNew({ name: "Mr.fy" })("handsome");
