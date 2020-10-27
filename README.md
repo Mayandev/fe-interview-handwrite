@@ -22,6 +22,7 @@
 - [函数柯里化（实现 `sum(1,2)(3)()`）](./src/curry.js)
 - [快速排序](./src/quickSort.js)
 - [归并排序](./src/mergeSort.js)
+- [去除字符串首尾空格](./src/trim.js)
 
 ### 实现 bind()
 
@@ -395,4 +396,28 @@ function mergeSort(arr) {
 }
 
 console.log(mergeSort([3,2,4,5,1,6]));  // [1, 2, 3, 4, 5, 6]
+```
+
+### 去除字符串首尾空格
+
+```javascript
+//正则表达式
+function myTrim1(str){
+    return str.replace(/^\s+|\s+$/g,'')
+}
+
+//不使用正则表达式
+function myTrim2(str){
+    let head = 0
+        foot = str.length
+    for(let i =0;i<str.length;i++){
+        if(str[i]===' ')head++
+        else break
+    }
+    for(let j =str.length-1;j>0;j--){
+        if(str[j]===' ')foot--
+        else break
+    }
+    return str.substr(head,foot-head)
+} 
 ```
