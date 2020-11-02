@@ -22,6 +22,10 @@
 - [函数柯里化（实现 `sum(1,2)(3)()`）](./src/curry.js)
 - [快速排序](./src/quickSort.js)
 - [归并排序](./src/mergeSort.js)
+- [插入排序](./src/insertionSort.js)
+- [选择排序](./src/selectionSort.js)
+- [二分查找](./src/binarySearch.js)
+- [数组去重](./src/unique.js)
 - [去除字符串首尾空格](./src/trim.js)
 
 ### 实现 bind()
@@ -396,6 +400,74 @@ function mergeSort(arr) {
 }
 
 console.log(mergeSort([3,2,4,5,1,6]));  // [1, 2, 3, 4, 5, 6]
+```
+
+### 插入排序
+
+```javascript
+function insertionSort(array) {
+  for (let i = 1; i < array.length; i++) {
+    let j = i - 1;
+    const temp = array[i];
+    while (j >= 0 && array[j] > temp) {
+      array[j + 1] = array[j];
+      j--;
+    }
+    array[j + 1] = temp;
+  }
+  return array;
+}
+```
+
+### 选择排序
+
+```javascript
+function selectionSort(array) {
+  for (let i = 0; i < array.length; i++) {
+    let minIndex = i;
+    for (let j = i + 1; j < array.length; j++) {
+      if (array[j] < array[minIndex]) {
+        minIndex = j;
+      }
+    }
+    const temp = array[i];
+    array[i] = array[minIndex];
+    array[minIndex] = temp;
+  }
+  return array;
+}
+```
+
+### 二分查找
+
+```javascript
+function binarySearch(array, target) {
+  let low = 0;
+  let height = array.length - 1;
+  while (low <= height) {
+    const middle = Math.floor((low + height) / 2);
+    if (target === array[middle]) return middle;
+    else if (target > array[middle]) low = middle + 1;
+    else height = middle - 1;
+  }
+  return -1;
+}
+```
+
+### 数组去重
+
+```javascript
+function unique(array) {
+  for (let i = 0; i < array.length - 1; i++) {
+    for (let j = i + 1; j < array.length; j++) {
+      if (array[j] === array[i]) {
+        array.splice(j, 1);
+        j--;
+      }
+    }
+  }
+  return array;
+}
 ```
 
 ### 去除字符串首尾空格
