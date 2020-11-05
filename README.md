@@ -24,9 +24,12 @@
 - [归并排序](./src/mergeSort.js)
 - [插入排序](./src/insertionSort.js)
 - [选择排序](./src/selectionSort.js)
+- [希尔排序](./src/shellSort.js)
+- [堆排序](./src/heapSort.js)
 - [二分查找](./src/binarySearch.js)
 - [数组去重](./src/unique.js)
 - [去除字符串首尾空格](./src/trim.js)
+- [最长递增子序列](./src/lis.js)
 
 ### 实现 bind()
 
@@ -438,6 +441,58 @@ function selectionSort(array) {
 }
 ```
 
+### 希尔排序
+
+```javascript
+function shellSort(array) {
+  const len = array.length;
+  let gap = Math.floor(len / 2);
+  for (gap; gap > 0; gap = Math.floor(gap / 2)) {
+    for (let i = gap; i < len; i++) {
+      let j = i - gap;
+      const temp = array[i];
+      while (j >= 0 && array[j] > temp) {
+        array[j + gap] = array[j];
+        j -= gap;
+      }
+      array[j + gap] = temp;
+    }
+  }
+  return array;
+}
+```
+
+### 堆排序
+
+```javascript
+function heapSort(array) {
+  for (let i = Math.floor(array.length / 2 - 1); i >= 0; i--) {
+    adjustHeap(array, i, array.length);
+  }
+  for (let j = array.length - 1; j > 0; j--) {
+    const temp = array[0];
+    array[0] = array[j];
+    array[j] = temp;
+    adjustHeap(array, 0, j);
+  }
+  return array;
+}
+
+function adjustHeap(array, i, length) {
+  for (let j = 2 * i + 1; j < length; j = 2 * j + 1) {
+    const temp = array[i];
+    if (j + 1 < length && array[j] < array[j + 1]) {
+      j++;
+    }
+    if (temp < array[j]) {
+      array[i] = array[j];
+      array[j] = temp;
+      i = j;
+    } else break;
+  }
+}
+```
+
 ### 二分查找
 
 ```javascript
@@ -492,4 +547,25 @@ function myTrim2(str){
     }
     return str.substr(head,foot-head)
 } 
+```
+
+### 最长递增子序列
+
+```javascript
+function lis(array) {
+  if (array.length === 0) return 0;
+  const arr = new Array(array.length).fill(1);
+  for (let i = 1; i < array.length; i++) {
+    for (let j = 0; j < i; j++) {
+      if (array[i] > array[j]) {
+        arr[i] = Math.max(arr[i], arr[j] + 1);
+      }
+    }
+  }
+  let result = 1;
+  for (let i = 0; i < arr.length; i++) {
+    result = Math.max(result, arr[i]);
+  }
+  return result;
+}
 ```
