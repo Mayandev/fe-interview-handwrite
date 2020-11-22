@@ -23,6 +23,9 @@ const MyPromise = function(fn) {
       onReject(this.value);
     }
   }
+  this.catch = (callback) => {
+    this.then(undefined, callback)
+  }
 
   try {
     fn(resolve, reject);
