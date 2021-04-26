@@ -4,9 +4,11 @@ function isPromise(obj) {
 
 function myPromiseAll(arr) {
   let res = []
+  let containPromise = false;
   return new Promise((resolve, reject) => {
     for (let i = 0; i < arr.length; i++) {
       if (isPromise(arr[i])) {
+        containPromise = true;
         arr[i].then(data => {
           res[i] = data;
           if (res.length === arr.length) {
@@ -19,5 +21,6 @@ function myPromiseAll(arr) {
         res[i] = arr[i];
       }
     }
+    if(!containPromise) resolve(res);
   })
 }
