@@ -12,4 +12,6 @@ function deepClone(obj) {
 }
 
 // test
-console.log(deepClone({name: 'jack', birth: {year: '1997', month: '10'}})) // {name: 'jack', birth: {…}}
+// console.log(deepClone({name: 'jack', birth: {year: '1997', month: '10'}})) // {name: 'jack', birth: {…}}
+
+module.exports = deepClone;
