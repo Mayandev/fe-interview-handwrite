@@ -21,6 +21,7 @@
 - [实现 Promise](./src/promise.js) ★★★
 - [实现 Promise.all()](./src/promiseAll.js) ★★★
 - [实现 Promise.race()](./src/promiseRace.js) ★
+- [实现 Proxy](./src/proxy.js) ★★
 - [实现 EventEmitter 订阅监听模式](./src/subscribe.js) ★★
 - [setTimout 实现 setInterval](./src/interval.js) ★
 - [深拷贝](./src/deepclone.js)  ★★★
