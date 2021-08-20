@@ -33,6 +33,7 @@
 - [函数节流](./src/throttle.js) ★★★
 - [函数柯里化（实现 `sum(1,2)(3)()`）](./src/curry.js) ★★★
 - [compose 函数](./src/compose.js) ★★
+- [before 函数](./src/before.js) ★
 
 
 ## 数组
