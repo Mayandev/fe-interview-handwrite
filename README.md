@@ -40,6 +40,7 @@
 
 - [数组拍平](./src/flatten.js) ★★★
 - [数组去重](./src/unique.js) ★★★
+- [数组转对象](./src/array2Object.js) ★
 
 ## 字符串
 
@@ -90,3 +91,5 @@
 - [ ] LeetCode 496 Next Greater Element I(时间复杂度O(n)(单调栈，使用 Map 映射 stack 的指定位置)
 - [ ] LeetCode 716 Max Stack(两个栈实现最大栈,要求pop,push, get max都为0(1)
 - [ ] LeetCode 860 Lemonade Change
+
+
