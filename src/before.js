@@ -7,7 +7,7 @@
  function before(count, func) {
   var temp = count;
   return function() {
-    if (temp > 1) {
+    if (temp > 0) {
       temp--;
       const args = [...arguments];
       func.apply(this, args);
