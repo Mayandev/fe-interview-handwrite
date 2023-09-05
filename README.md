@@ -27,6 +27,7 @@
 - [实现 EventEmitter 订阅监听模式](./src/subscribe.js) ★★
 - [setTimout 实现 setInterval](./src/interval.js) ★
 - [深拷贝](./src/deepclone.js)  ★★★
+- [实现全排列](./src/permutation.js) ★★
 
 
 ### 函数
