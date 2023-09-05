@@ -19,6 +19,7 @@
 - [实现 new](./src/new.js) ★
 - [实现 jsonp](./src/jsonp.js) ★★★
 - [实现 Promise](./src/promise.js) ★★★
+- [实现 Promise (外网摘下来的A+测试版, 可以直接背)](./src/PromiseAPlus.js) ★★★
 - [实现 Promise.all()](./src/promiseAll.js) ★★★
 - [实现 Promise.race()](./src/promiseRace.js) ★
 - [实现 Proxy](./src/proxy.js) ★★

@@ -10,4 +10,23 @@ var flatten = function(arr) {
   return res;
 }
 
+// 法二: 用栈
+const flattenFunc = arr => {
+  if (!arr.length) return [];
+
+  const res = [];
+
+  const stack = [...arr];
+  while(stack.length) {
+    const cur = stack.pop();
+    if (Array.isArray(cur)) {
+      stack.push(...cur);
+    } else {
+      res.push(cur);
+    }
+  }
+
+  return res.reverse();
+};
+
 console.log(flatten([1,[1,2,[2,4]],3,5]));  // [1, 1, 2, 2, 4, 3, 5]

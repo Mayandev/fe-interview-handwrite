@@ -15,4 +15,7 @@ function quicksort(arr) {
 
 }
 
-console.log(quicksort([4,3,5,2,1,6]));   //  [1, 2, 3, 4, 5, 6]
+// 一行式写法
+const quickSortOneLine = arr => arr.length <= 1 ? [...arr] : [...quickSortOneLine(arr.filter(num => num < arr[0])), ...arr.filter(num => num === arr[0]), ...quickSortOneLine(arr.filter(num => num > arr[0]))];
+
+console.log(quickSortOneLine([4,3,5,2,1,6]));   //  [1, 2, 3, 4, 5, 6]
