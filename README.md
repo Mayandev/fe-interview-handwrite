@@ -22,6 +22,7 @@
 - [实现 Promise (外网摘下来的A+测试版, 可以直接背)](./src/PromiseAPlus.js) ★★★
 - [实现 Promise.all()](./src/promiseAll.js) ★★★
 - [实现 Promise.race()](./src/promiseRace.js) ★
+- [实现并发Promise](./src/PromisPool.js) ★★
 - [实现 Proxy](./src/proxy.js) ★★
 - [实现 EventEmitter 订阅监听模式](./src/subscribe.js) ★★
 - [setTimout 实现 setInterval](./src/interval.js) ★
