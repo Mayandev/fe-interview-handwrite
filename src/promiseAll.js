@@ -57,3 +57,23 @@ function myPromiseAll(arr) {
     if (!containPromise) resolve(res);
   });
 }
+
+
+// AI生成的版本
+function promiseAllAI(promises) {
+  return new Promise((resolve, reject) => {
+    let results = [];
+    let completed = 0;
+    promises.forEach((promise, index) => {
+      promise.then(result => {
+        results[index] = result;
+        completed++;
+        if (completed === promises.length) {
+          resolve(results);
+        }
+      }).catch(error => {
+        reject(error);
+      });
+    });
+  });
+}
