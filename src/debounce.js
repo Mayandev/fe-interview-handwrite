@@ -27,3 +27,22 @@ function debounce2(fn, wait, leading = true) {
     }, wait);
   }
 }
+
+// 箭头函数版
+const debounceSimple = (fn, wait, leading = true) => {
+  let timer = null;
+  let led = leading;
+
+  const res = (...args) => {
+    timer && clearTimeout(timer);
+    led && fn(...args);
+
+    timer = setTimeout(() => {
+      timer = null;
+      !led && fn(...args);;
+      led = false;
+    }, wait);
+  };
+
+  return res;
+};
