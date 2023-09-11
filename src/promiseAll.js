@@ -88,7 +88,7 @@ function promiseAllAIFine(promises) {
     const results = [];
     
     let completed = 0;
-    promises.forEach((promise, index) => {
+    promises.forEach(promise => {
       if (isPromise(promise)) {
         promise
           .then((result) => {

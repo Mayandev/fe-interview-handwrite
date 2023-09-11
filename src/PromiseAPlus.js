@@ -53,7 +53,7 @@ class Prom {
   then(onFulfil, onRej) {
     return new Prom((resolve, reject) => {
       if (this.status === PEND) {
-        this.onResolvedFns.push((value) => { resolve(onFulfil(value)) });
+        this.onResolvedFns.push((value) => { resolve(onFulfil(value)); });
         if (reject) {
           this.onRejectedFns.push(onRej);
         }
