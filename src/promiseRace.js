@@ -5,3 +5,12 @@ function myPromiseRace(arr) {
     }
   })
 }
+
+// AI生成版本
+function promiseRaceAI(promises) {
+  return new Promise((resolve, reject) => {
+    promises.forEach(promise => {
+      promise.then(resolve).catch(reject);
+    });
+  });
+}

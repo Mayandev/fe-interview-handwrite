@@ -19,12 +19,16 @@
 - [实现 new](./src/new.js) ★
 - [实现 jsonp](./src/jsonp.js) ★★★
 - [实现 Promise](./src/promise.js) ★★★
+- [实现 Promise (外网摘下来的A+测试版, 可以直接背)](./src/PromiseAPlus.js) ★★★
 - [实现 Promise.all()](./src/promiseAll.js) ★★★
 - [实现 Promise.race()](./src/promiseRace.js) ★
+- [实现并发Promise](./src/PromisPool.js) ★★
+- [实现用Promise封装的ajax](./src/PromiseAjax.js) ★★
 - [实现 Proxy](./src/proxy.js) ★★
 - [实现 EventEmitter 订阅监听模式](./src/subscribe.js) ★★
 - [setTimout 实现 setInterval](./src/interval.js) ★
 - [深拷贝](./src/deepclone.js)  ★★★
+- [实现全排列](./src/permutation.js) ★★
 
 
 ### 函数
@@ -66,6 +70,7 @@
 - [最长公共子串](./src/longestCommonPrefix.js) ★★
 - [城市数据找父节点](./src/city.js) ★
 - [查找缺失的数](./src/missingNumber.js) ★
+- [**多个**数组取交集](./src/ArrayIntersections.ts) ★
 
 
 分享一下自己整理的 LeetCode 上必刷的题，比较具有代表性。

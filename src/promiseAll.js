@@ -1,12 +1,16 @@
 function isPromise(obj) {
   return (
-    !!obj && (typeof obj === 'function' || typeof obj === 'object') && typeof obj.then == 'function'
+    !!obj &&
+    (typeof obj === "function" || typeof obj === "object") &&
+    typeof obj.then == "function"
   );
 }
 
 function isPromise(object) {
   return (
-    !!object && (typeof obj === 'function' || typeof obj === 'object') && object instanceof Promise
+    !!object &&
+    (typeof obj === "function" || typeof obj === "object") &&
+    object instanceof Promise
   );
 }
 function PromiseAll(arr) {
@@ -55,5 +59,52 @@ function myPromiseAll(arr) {
       }
     }
     if (!containPromise) resolve(res);
+  });
+}
+
+// AI生成的版本
+function promiseAllAI(promises) {
+  return new Promise((resolve, reject) => {
+    let results = [];
+    let completed = 0;
+    promises.forEach((promise, index) => {
+      promise
+        .then((result) => {
+          results[index] = result;
+          completed++;
+          if (completed === promises.length) {
+            resolve(results);
+          }
+        })
+        .catch((error) => {
+          reject(error);
+        });
+    });
+  });
+}
+
+function promiseAllAIFine(promises) {
+  return new Promise((resolve, reject) => {
+    const results = [];
+    
+    let completed = 0;
+    promises.forEach(promise => {
+      if (isPromise(promise)) {
+        promise
+          .then((result) => {
+            results.push(result);
+            completed++;
+            if (completed === promises.length) {
+              resolve(results);
+            }
+          })
+          .catch((error) => {
+            reject(error);
+          });
+      } else {
+        results.push(promise);
+        completed++;
+      }
+    });
   });
 }

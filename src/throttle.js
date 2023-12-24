@@ -10,3 +10,18 @@ function throttle(fn, wait) {
     }
   }
 }
+
+// 箭头函数版
+const throttleSimple = (cb, wait = 0) => {
+  let lastTime = 0;
+
+  const res = (...args) => {
+    const now = +new Date();
+    if (now - lastTime > wait) {
+      cb(...args);
+      lastTime = now;
+    }
+  };
+
+  return res;
+};
